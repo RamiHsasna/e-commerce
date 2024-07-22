@@ -1,0 +1,61 @@
+-- DROP DATABASE IF EXISTS ecommercedb;
+
+CREATE TABLE "customer" (
+                            "customer_id" SERIAL PRIMARY KEY,
+                            "fullname" VARCHAR(255) NOT NULL,
+                            "email" VARCHAR(255) NOT NULL,
+                            "password" VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE "category" (
+                            "category_id" SERIAL PRIMARY KEY,
+                            "name" VARCHAR(255) NOT NULL,
+                            "description" TEXT NOT NULL
+);
+
+CREATE TABLE "product" (
+                           "product_id" SERIAL PRIMARY KEY,
+                           "product_name" VARCHAR(255) NOT NULL,
+                           "product_price" DECIMAL(10, 2) NOT NULL,
+                           "description" TEXT NOT NULL,
+                           "category_id" INTEGER NOT NULL,
+                           CONSTRAINT "fk_category_product" FOREIGN KEY("category_id") REFERENCES "category"("category_id")
+);
+
+CREATE TABLE "cart" (
+                        "cart_id" SERIAL PRIMARY KEY,
+                        "customer_id" INTEGER NOT NULL,
+                        CONSTRAINT "fk_customer_cart" FOREIGN KEY("customer_id") REFERENCES "customer"("customer_id")
+);
+
+CREATE TABLE "order" (
+                         "order_id" SERIAL PRIMARY KEY,
+                         "order_amount" DECIMAL(10, 2) NOT NULL,
+                         "order_date" DATE NOT NULL,
+                         "customer_id" INTEGER NOT NULL,
+                         CONSTRAINT "fk_customer_order" FOREIGN KEY("customer_id") REFERENCES "customer"("customer_id")
+);
+
+CREATE TABLE "payment" (
+                           "payment_id" BIGSERIAL PRIMARY KEY,
+                           "type" VARCHAR(50) NOT NULL,
+                           "amount" DECIMAL(10, 2) NOT NULL,
+                           "order_id" INTEGER NOT NULL,
+                           CONSTRAINT "fk_order_payment" FOREIGN KEY("order_id") REFERENCES "order"("order_id")
+);
+
+CREATE TABLE "cart_product" (
+                                "cart_id" INTEGER NOT NULL,
+                                "product_id" INTEGER NOT NULL,
+                                PRIMARY KEY ("cart_id", "product_id"),
+                                CONSTRAINT "fk_cart" FOREIGN KEY("cart_id") REFERENCES "cart"("cart_id"),
+                                CONSTRAINT "fk_product" FOREIGN KEY("product_id") REFERENCES "product"("product_id")
+);
+
+CREATE TABLE "order_product" (
+                                 "order_id" INTEGER NOT NULL,
+                                 "product_id" INTEGER NOT NULL,
+                                 PRIMARY KEY ("order_id", "product_id"),
+                                 CONSTRAINT "fk_order" FOREIGN KEY("order_id") REFERENCES "order"("order_id"),
+                                 CONSTRAINT "fk_product_order" FOREIGN KEY("product_id") REFERENCES "product"("product_id")
+);
