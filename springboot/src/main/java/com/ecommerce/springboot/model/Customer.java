@@ -13,8 +13,11 @@ public class Customer {
     @Column(name="customer_id")
     private Long customer_id;
 
-    @Column(name = "fullname")
-    private String fullname;
+    @Column(name = "firstname")
+    private String firstname;
+
+    @Column(name = "lastname")
+    private String lastname;
 
     @Column(name = "email")
     private String email;
@@ -29,11 +32,18 @@ public class Customer {
         this.customer_id = customer_id;
     }
 
-    public String getName() {
-        return fullname;
+    public String getFirstName() {
+        return firstname;
     }
-    public void setName(String fullname) {
-        this.fullname = fullname;
+    public void setFirstName(String firstname) {
+        this.firstname = Customer.this.firstname;
+    }
+
+    public String getLastame() {
+        return lastname;
+    }
+    public void setLastName(String lastname) {
+        this.lastname = Customer.this.lastname;
     }
 
     public String getMail() {
