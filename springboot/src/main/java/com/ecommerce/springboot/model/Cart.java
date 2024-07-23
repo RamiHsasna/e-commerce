@@ -15,4 +15,19 @@ public class Cart {
     @ManyToOne
     @JoinColumn (name = "customer_id",nullable = false)
     private Customer customer;
+
+    //Getters and setters
+    public void setCart(long cart_id){
+        this.cart_id = cart_id;
+    }
+    public long getCart(){
+        return cart_id;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+    public void setId(long customer_id){
+        this.customer_id = customer_id;
+    }
 }

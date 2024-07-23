@@ -21,5 +21,30 @@ public class Customer {
 
     @Column(name = "password")
     private String password;
+
+    public long getId(){
+        return customer_id;
+    }
+    public void setId(long customer_id){
+        this.customer_id = customer_id;
+    }
+    public String getName(){
+        return fullname;
+    }
+    public void setName(String fullname){
+        this.fullname = fullname;
+    }
+    public String getMail(){
+        return email;
+    }
+    public void setMail(String email){
+        this.email = email;
+    }
+    public String getPassword(){
+        return password;
+    }
+    public void setPasswordd(String password){
+        this.password = password;
+    }
 }
 
