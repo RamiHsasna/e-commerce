@@ -40,7 +40,7 @@ public class Product {
         return product_price;
     }
     public void setProduct_price(BigDecimal product_price) {
-        this.product_price = product_rpice;
+        this.product_price = product_price;
     }
 
     public Long getProduct_id() {

@@ -3,6 +3,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.Data;
 import jakarta.persistence.*;
+import java.math.BigDecimal;
 
 
 @Data
@@ -12,7 +13,7 @@ public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="payment_id", nullable = false)
-    private long payment_id;
+    private Long payment_id;
 
     @Column (name="type")
     private String type;
@@ -20,13 +21,13 @@ public class Payment {
     @Column (name= "amount")
     private BigDecimal amount;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn (name="order_id", nullable = false)
     private Order order;
 
     //Getters and setters
 
-    public long getPayment_id() {
+    public Long getPayment_id() {
         return payment_id;
     }
     public void setPayment_id(long payment_id) {

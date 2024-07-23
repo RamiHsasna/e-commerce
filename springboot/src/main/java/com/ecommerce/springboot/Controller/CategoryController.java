@@ -1,4 +1,4 @@
-package com.ecommerce.springboot;
+package com.ecommerce.springboot.Controller;
 
 import com.ecommerce.springboot.repo.CategoryRepo;
 import org.springframework.beans.factory.annotation.Autowired;

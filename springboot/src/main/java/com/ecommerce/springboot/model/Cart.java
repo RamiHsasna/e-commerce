@@ -27,7 +27,4 @@ public class Cart {
     public Customer getCustomer() {
         return customer;
     }
-    public void setId(long customer_id){
-        this.customer_id = customer_id;
-    }
 }
