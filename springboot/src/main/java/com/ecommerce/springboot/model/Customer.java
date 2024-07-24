@@ -2,6 +2,8 @@ package com.ecommerce.springboot.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
 @Entity
@@ -36,14 +38,14 @@ public class Customer {
         return firstname;
     }
     public void setFirstName(String firstname) {
-        this.firstname = Customer.this.firstname;
+        this.firstname = firstname;
     }
 
     public String getLastame() {
         return lastname;
     }
     public void setLastName(String lastname) {
-        this.lastname = Customer.this.lastname;
+        this.lastname = lastname;
     }
 
     public String getMail() {
@@ -56,7 +58,7 @@ public class Customer {
     public String getPassword() {
         return password;
     }
-    public void setPasswordd(String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 }

@@ -22,6 +22,7 @@ public class CartProduct {
 
     // Getters and Setters
     @Embeddable
+    static
     class CartProductId implements Serializable {
         @Column(name = "cart_id")
         private Long cartId;

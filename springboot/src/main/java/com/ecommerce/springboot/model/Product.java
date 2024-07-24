@@ -1,7 +1,6 @@
 package com.ecommerce.springboot.model;
 import jakarta.persistence.*;
 import lombok.Data;
-import com.ecommerce.springboot.model.Category;
 
 import java.math.BigDecimal;
 

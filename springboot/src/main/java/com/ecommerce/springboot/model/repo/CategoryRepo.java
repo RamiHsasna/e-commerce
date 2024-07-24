@@ -1,4 +1,4 @@
-package com.ecommerce.springboot.repo;
+package com.ecommerce.springboot.model.repo;
 
 import com.ecommerce.springboot.model.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
