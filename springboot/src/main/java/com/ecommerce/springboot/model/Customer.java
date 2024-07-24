@@ -27,11 +27,21 @@ public class Customer {
     @Column(name = "password")
     private String password;
 
+    @Column(name="username" , nullable = false, unique = true)
+    private String username;
+
     public long getId() {
         return customer_id;
     }
     public void setId(long customer_id) {
         this.customer_id = customer_id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getFirstName() {

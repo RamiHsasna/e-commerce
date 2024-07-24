@@ -1,12 +1,15 @@
 package com.ecommerce.springboot.api.controller.auth;
 
 import com.ecommerce.springboot.api.model.RegistrationBody;
+import com.ecommerce.springboot.exception.CustomerAlreadyExistsException;
 import com.ecommerce.springboot.model.repo.CustomerRepo;
 import com.ecommerce.springboot.service.CustomerService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth")
@@ -23,7 +26,12 @@ public class AuthentificationController {
 
 
     @PostMapping("/register")
-    public void registerCustomer(@RequestBody RegistrationBody registrationBody){
-        customerService.registerCustomer(registrationBody);
+    public ResponseEntity registerCustomer(@Valid @RequestBody RegistrationBody registrationBody){
+        try {
+            customerService.registerCustomer(registrationBody);
+            return ResponseEntity.ok().build();
+        } catch (CustomerAlreadyExistsException ex) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).build();
+        }
     }
 }
