@@ -11,9 +11,11 @@ import org.springframework.stereotype.Service;
 public class CustomerService {
 
     private CustomerRepo customerRepo;
+    private EncryptionService encryptionService;
 
-    public CustomerService(CustomerRepo customerRepo) {
+    public CustomerService(CustomerRepo customerRepo, EncryptionService encryptionService) {
         this.customerRepo = customerRepo;
+        this.encryptionService = encryptionService;
     }
 
 
@@ -30,8 +32,7 @@ public class CustomerService {
         customer.setFirstName(registrationBody.getFirstname());
         customer.setLastName(registrationBody.getLastname());
         customer.setMail(registrationBody.getEmail());
-        //TODO : Encrypt passwords !!
-        customer.setPassword(registrationBody.getPassword());
+        customer.setPassword(encryptionService.encryptPassword(registrationBody.getPassword()));
         return customerRepo.save(customer);
     }
 }
