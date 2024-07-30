@@ -4,11 +4,13 @@ import com.ecommerce.springboot.api.model.LoginBody;
 import com.ecommerce.springboot.api.model.LoginResponse;
 import com.ecommerce.springboot.api.model.RegistrationBody;
 import com.ecommerce.springboot.exception.CustomerAlreadyExistsException;
+import com.ecommerce.springboot.model.Customer;
 import com.ecommerce.springboot.model.repo.CustomerRepo;
 import com.ecommerce.springboot.service.CustomerService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -45,5 +47,10 @@ public class AuthentificationController {
             response.setJwt(jwt);
             return ResponseEntity.ok(response);
         }
+    }
+
+    @GetMapping("/me")
+    public Customer getLoggedInCustomerProfile(@AuthenticationPrincipal Customer customer){
+        return customer;
     }
 }

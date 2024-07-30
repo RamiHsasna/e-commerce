@@ -1,5 +1,6 @@
 package com.ecommerce.springboot.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
@@ -23,7 +24,7 @@ public class Customer {
 
     @Column(name = "email")
     private String email;
-
+    @JsonIgnore
     @Column(name = "password")
     private String password;
 

@@ -41,7 +41,7 @@ public class CustomerService {
         return customerRepo.save(customer);
     }
     public String loginCustomer(LoginBody loginBody){
-        Optional<Customer> opCustomer = customerRepo.findByUsernameIgnoreCase(loginBody.getUsername());
+        Optional<Customer> opCustomer = customerRepo.findByEmailIgnoreCase(loginBody.getEmail());
         if (opCustomer.isPresent()){
             Customer customer = opCustomer.get();
             if(EncryptionService.verifyPassword(loginBody.getPassword(),customer.getPassword())){
