@@ -1,0 +1,9 @@
+.carousel-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.carousel-container app-carousel {
+  flex: 1;
+  max-width: 50%; /* Ensure each carousel takes up half the width of the container */
+}
