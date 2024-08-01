@@ -1,16 +1,101 @@
-<nav class="navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">My eCommerce</a>
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" routerlink="/products">Products</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerlink="/register">Register</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerlink="/login">Login</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+<nz-header>
+  <ul nz-menu nzMode="horizontal">
+    <span nz-icon nzType="github" nzTheme="fill"></span>
+    <li nz-submenu nzTitle="Phones">
+      <ul>
+        <li nz-menu-group nzTitle="iPhone">
+          <ul>
+            <li nz-submenu nzTitle="iPhone">
+              <ul>
+                <li nz-menu-item>iPhone 11</li>
+                <li nz-menu-item>iPhone 12</li>
+                <li nz-menu-item>iPhone 13</li>
+                <li nz-menu-item>iPhone 14</li>
+                <li nz-menu-item>iPhone 15</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li nz-menu-group nzTitle="Samsung">
+          <ul>
+            <li nz-submenu nzTitle="Samsung">
+              <ul>
+                <li nz-menu-item>Samsung Galaxy S21</li>
+                <li nz-menu-item>Samsung Galaxy S20</li>
+                <li nz-menu-item>Samsung Galaxy Note 20</li>
+                <li nz-menu-item>Samsung Galaxy A52</li>
+                <li nz-menu-item>Samsung Galaxy A72</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li nz-menu-group nzTitle="Redmi">
+          <ul>
+            <li nz-submenu nzTitle="Redmi">
+              <ul>
+                <li nz-menu-item>Redmi Note 10 Pro</li>
+                <li nz-menu-item>Redmi Note 9 Pro</li>
+                <li nz-menu-item>Redmi Note 8 Pro</li>
+                <li nz-menu-item>Redmi 10</li>
+                <li nz-menu-item>Redmi 9</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li nz-submenu nzTitle="Headphones" nzicon="setting">
+      <ul>
+        <li nz-menu-group nzTitle="Wireless">
+          <ul>
+            <li nz-menu-item>Earbuds</li>
+            <li nz-menu-item>Headsets</li>
+            <li nz-menu-item>Airpods</li>
+          </ul>
+        </li>
+        <li nz-menu-group nzTitle="Wired">
+          <ul>
+            <li nz-menu-item>Headsets</li>
+            <li nz-menu-item>Earphones</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li nz-submenu nzTitle="Computers" nzicon="setting">
+      <ul>
+        <li nz-menu-group nzTitle="Laptops">
+          <ul>
+            <li nz-submenu nzTitle="Laptops">
+              <ul>
+                <li nz-menu-item>Mac Laptops</li>
+                <li nz-menu-item>Gaming Laptops</li>
+                <li nz-menu-item>Professional Laptops</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li nz-menu-group nzTitle="Desktop Computer">
+          <ul>
+            <li nz-menu-item>Configure your own</li>
+            <li nz-submenu nzTitle="Home setup">
+              <ul>
+                <li nz-menu-item>Gaming Setup</li>
+                <li nz-menu-item>Professional Setup</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <div class="btn-container">
+      <button nz-button nzType="primary">Sign up</button>
+      <button nz-button nzType="default">Login</button>
+    </div>
+  </ul>
+</nz-header>
+<!-- <nz-content style="padding: 24px">
+    <router-outlet></router-outlet>
+  </nz-content>
+  <nz-footer style="text-align: center"
+    >My eCommerce ©2024 Created by RamiHsasna</nz-footer
+  > -->
