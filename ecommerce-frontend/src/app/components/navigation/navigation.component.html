@@ -88,8 +88,12 @@
       </ul>
     </li>
     <div class="btn-container">
-      <button nz-button nzType="primary">Sign up</button>
-      <button nz-button nzType="default">Login</button>
+      <button nz-button nzType="primary" (click)="navigateToRegister()">
+        Register
+      </button>
+      <button nz-button nzType="default" (click)="navigateToLogin()">
+        Login
+      </button>
     </div>
   </ul>
 </nz-header>
