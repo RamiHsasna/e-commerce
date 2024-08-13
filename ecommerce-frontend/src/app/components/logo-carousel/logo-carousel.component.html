@@ -1,0 +1,13 @@
+<div class="carousel-container">
+  <button mat-icon-button (click)="prev()">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+  <div class="carousel-content" *ngFor="let image of visibleImages">
+    <mat-card>
+      <img mat-card-image [src]="image" alt="Company Logo" />
+    </mat-card>
+  </div>
+  <button mat-icon-button (click)="next()">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+</div>

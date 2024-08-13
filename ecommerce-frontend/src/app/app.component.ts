@@ -6,6 +6,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { CardContainerComponent } from './components/card-container/card-container.component';
 import { CardComponent } from './components/card/card.component';
+import { LogoCarouselComponent } from './components/logo-carousel/logo-carousel.component';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ import { CardComponent } from './components/card/card.component';
     CommonModule,
     CardContainerComponent,
     CardComponent,
+    LogoCarouselComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
