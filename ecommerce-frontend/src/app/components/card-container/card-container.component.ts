@@ -48,5 +48,17 @@ export class CardContainerComponent {
       image: 'https://via.placeholder.com/150',
       content: 'Content for card 6',
     },
+    {
+      title: 'Card 7',
+      subtitle: 'Subtitle 7',
+      image: 'https://via.placeholder.com/150',
+      content: 'Content for card 7',
+    },
+    {
+      title: 'Card 8',
+      subtitle: 'Subtitle 8',
+      image: 'https://via.placeholder.com/150',
+      content: 'Content for card 8',
+    },
   ];
 }
